@@ -1,54 +1,48 @@
 import React from 'react';
 import "../index.css"
-
-interface TaskProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+const defaultTaskProps = {
+    title: 'Sweep the Kitchen',
+    description: 'Get under the cabinets, do a good job',
+    isComplete: true
 }
 
-/**
- * Primary UI component for user interaction
- */
+export type TaskProps = {
+    title: string;
+    description: string;
+    isComplete: boolean;
+}
 export const Task = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: TaskProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+    title, 
+    description, 
+    isComplete
+}: TaskProps = defaultTaskProps) => {
   return (
-    <div>
-        <h1 className="font-sans:inter text-5xl tracking-wider pb-6"> Task</h1>
+    <div className="font-light">
+        <h1 className="font-sans:inter text-5xl tracking-wider pb-4"> Task</h1>
         <div> 
             <p> Incomplete</p>
-            <div className="w-[426px] h-[77px] border-solid border-2 border-color:grey rounded-lg "> 
-                <div> Sweep the Kitchen</div>
+            <div className="w-[462px] h-[77px] border-solid flex flex-row mb-4 border border-color:grey rounded-lg "> 
+                <div className="flex flex-row items-center"> 
+                        <button className="border rounded-md border-solid w-[25px] h-[25px] mx-4 font-sans"> </button>
+                        <div>
+                            <p className="text-lg"> Sweep the Kitchen</p>
+                            <p className="text-md text-slate-400"> Get under the cabinets, do a good job</p>
+                        </div>
+                </div>
             </div> 
             <p> Complete</p>
-            <div className="w-[426px] h-[77px] bg-[#E2FFE5] border-solid border-2 border-color:grey rounded-lg"> 
-                <div> ExampleTask </div>
+            <div className="w-[462px] h-[77px] border-solid flex flex-row border border-color:grey bg-[#E2FFE5] rounded-lg "> 
+                <div className="flex flex-row items-center"> 
+                        <button className="border rounded-md border-solid w-[25px] bg-[#359845] h-[25px] mx-4 font-sans"> </button>
+                        <div>
+                            <p className="text-lg"> Sweep the Kitchen</p>
+                            <p className="text-md text-slate-400"> Get under the cabinets, do a good job</p>
+                        </div>
+                </div>
             </div>
         </div>
-
     </div>
   );
 };
+
+

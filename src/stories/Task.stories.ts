@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Task } from './Task';
-import "../index.css"
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -28,6 +27,26 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'To Do ',
+    label: 'Task',
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    label: 'Task',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+    label: 'Task',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+    label: 'Task',
   },
 };
