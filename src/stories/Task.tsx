@@ -16,30 +16,20 @@ export const Task = ({
     description, 
     isComplete
 }: TaskProps = defaultTaskProps) => {
-  return (
+    const bgColor = isComplete ? 'bg-green-500' : 'bg-white'
+    return (
     <div className="font-light">
         <h1 className="font-sans:inter text-5xl tracking-wider pb-4"> Task</h1>
         <div> 
-            <p> Incomplete</p>
             <div className="w-[462px] h-[77px] border-solid flex flex-row mb-4 border border-color:grey rounded-lg "> 
                 <div className="flex flex-row items-center"> 
-                        <button className="border rounded-md border-solid w-[25px] h-[25px] mx-4 font-sans"> </button>
+                        <button className={`border rounded-md border-solid w-[25px] h-[25px] mx-4 font-sans ${bgColor}`}> </button>
                         <div>
-                            <p className="text-lg"> Sweep the Kitchen</p>
-                            <p className="text-md text-slate-400"> Get under the cabinets, do a good job</p>
+                            <p className="text-lg"> {title}</p>
+                            <p className="text-md text-slate-400"> {description}</p>
                         </div>
                 </div>
             </div> 
-            <p> Complete</p>
-            <div className="w-[462px] h-[77px] border-solid flex flex-row border border-color:grey bg-[#E2FFE5] rounded-lg "> 
-                <div className="flex flex-row items-center"> 
-                        <button className="border rounded-md border-solid w-[25px] bg-[#359845] h-[25px] mx-4 font-sans"> </button>
-                        <div>
-                            <p className="text-lg"> Sweep the Kitchen</p>
-                            <p className="text-md text-slate-400"> Get under the cabinets, do a good job</p>
-                        </div>
-                </div>
-            </div>
         </div>
     </div>
   );
