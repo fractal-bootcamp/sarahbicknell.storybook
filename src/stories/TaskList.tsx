@@ -39,8 +39,8 @@ const initialTaskArray: Omit<TaskProps, 'toggleComplete'>[] = [
 
 const Task = ({title, description, isComplete, toggleComplete}: TaskProps) => {
   //ok, now toggle is set to isComplete value as its initial value
-  const toggleBg = isComplete ? 'bg-[#359845]' : 'bg-[#FFFFFF]'
-  const taskBoxBg = isComplete ? 'bg-[#E2FFE5]' : 'bg-[#FFFFFF]'
+  const toggleBg = isComplete ? 'bg-[#359845]' : 'bg-[#FFFFFFF]'
+  const taskBoxBg = isComplete ? 'bg-[#E2FFE5]' : 'bg-[#FFFFFFF]'
 
   return (
     <div className="font-light">
