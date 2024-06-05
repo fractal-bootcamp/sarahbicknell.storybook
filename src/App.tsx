@@ -4,7 +4,7 @@ import { Task } from './stories/Task';
 function App() {
   return (
     <div className="App">
-      <Task label='hi' />
+      {/* <Task label='hi' /> */}
     </div>
   );
 }
