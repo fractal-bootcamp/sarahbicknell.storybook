@@ -13,13 +13,13 @@ type Story = StoryObj<typeof meta>;
 
 const dummyTasks: TaskProps[] = [
     {
-        title:"Task 1",
-        description: "Do some stuff",
+        title:"Sweep the Kitchen",
+        description: "Get under the cabinets, do a good job",
         isComplete: false
     },
     {
-        title:"Task 2",
-        description: "Do some other stuff",
+        title:"Sweep the Kitchen",
+        description: "Get under the cabinets, do a good job",
         isComplete: true
     }
 ]
